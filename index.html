@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<script src="assets/javascript/script.js"></script>
+	</head>
+	<body>
+		<div class="bg">
+			<h1>
+				Hangman, Popular N64 Games Edition
+			</h1>
+			<h2>
+				Press any key to start!
+			</h2>
+		<section class="container">
+			<div class="row">
+				<section id="top" class="box wide">
+					<h2 id="word"></h2>
+				</section>
+			</div>
+			<div>
+				<section id="left" class="box narrow">
+					<h2>Lives:</h2>
+					<p id="lives"></p>
+				</section>
+				<section id="right" class="box narrow">
+					<h2>Guesses:</h2>
+					<p id="guess"></p>
+				</section>
+			</div>
+			<!-- <div>
+				<section id="left2" class="box narrow">
+					<p>test</p>
+				</section>
+				<section id="right2" class="box narrow">
+					<p>test</p>
+				</section>
+			</div> -->
+		</section>
+		</div>
+		<script>
+		state.disp();
+		document.onkeyup = function(event){
+        // var inp = event.key;
+        state.play(event.key);
+    	}
+		</script>
+	</body>
+</html>

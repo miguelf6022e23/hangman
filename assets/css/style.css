@@ -1,0 +1,60 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("../images/N64.png");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1, h2, p{
+    color: orange;
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.box{
+    background-color:   #A52A2A;
+    text-align: center;
+    display: table-cell;
+    border: 1px solid grey;
+}
+
+.wide{
+    padding: 50px;
+}
+
+.narrow{
+    padding: 10px 50px 10px 50px;
+    width: 4%
+    }
+
+.container{
+    width: 90%;
+    display: table;
+    table-layout: fixed;
+    margin-left: 5%;
+    border-spacing: 10px;
+/*    border: 1px solid grey;*/
+}
+
+.row{
+    display: table-row;
+}
+
+.icon{
+    width: 30px;
+}
+
+.word{
+    margin-right:5px;
+}
