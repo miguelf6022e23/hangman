@@ -11,12 +11,14 @@ function init(){
 					gameSimp = gameSimp + gameLow.charAt(i);
 				}
 			}
+
+
 			return [game, gameSimp];
 }
 
 var strs = init();
 var state = {
-	lives: 10,
+	lives: 8,
 	gameName: strs[0],
 	gameSimp: strs[1],
 	solved: isLetter(strs[1],false,true),
@@ -38,10 +40,24 @@ var state = {
 		}
 		this.disp();
 		if (this.lives==0){
+
+			strs = init();
+			this.reset();
 			alert("you lost!");
 		} else if (!this.solved.includes(false)){
+			document.getElementById("word").innerHTML = this.gameName;
+			strs = init();
+			this.reset();
 			alert("you won!");
 		}
+	},
+
+	reset: function(){
+		this.lives= 10;
+		this.gameName= strs[0];
+		this.gameSimp= strs[1];
+		this.solved= isLetter(strs[1],false,true);
+		this.guesses=[];
 	},
 
 	disp: function(){
