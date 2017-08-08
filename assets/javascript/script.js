@@ -18,13 +18,20 @@ function init(){
 
 var strs = init();
 var state = {
-	lives: 8,
+	lives: 6,
 	gameName: strs[0],
 	gameSimp: strs[1],
 	solved: isLetter(strs[1],false,true),
 	guesses:[],
 
 	play: function(letter){
+
+		alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+		if (!alphabet.includes(letter)){
+			this.disp();
+			return;
+		}
+
 		if (this.guesses.includes(letter)){
 			alert("Already used that letter!");
 		}else if (this.gameSimp.includes(letter)){
@@ -40,20 +47,19 @@ var state = {
 		}
 		this.disp();
 		if (this.lives==0){
-
+			alert("You lost! The game was: " + this.gameName);
 			strs = init();
 			this.reset();
-			alert("you lost!");
 		} else if (!this.solved.includes(false)){
 			document.getElementById("word").innerHTML = this.gameName;
 			strs = init();
 			this.reset();
-			alert("you won!");
+			alert("You won!");
 		}
 	},
 
 	reset: function(){
-		this.lives= 10;
+		this.lives= 6;
 		this.gameName= strs[0];
 		this.gameSimp= strs[1];
 		this.solved= isLetter(strs[1],false,true);
